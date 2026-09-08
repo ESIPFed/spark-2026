@@ -1,0 +1,8 @@
+- title: Speaker Name
+  avatar: https://avatars.githubusercontent.com/username
+  organizations:
+    - name: Organization Name
+      url: https://organization-url.com/
+  talk: Title of talk
+  user_groups:
+    - Spark Presenter

@@ -1,0 +1,54 @@
+repo_directory: html
+name: Spark@AGU
+favicon: assets/images/esip-favicon.png
+apply: false
+banner:
+  description: ""
+  start_date: XX Month
+  end_date: XX Month
+  # TODO(2026): confirm event date/time once AGU Fall Meeting 2026 schedule is set
+  event_date: Date TBD
+  event_time: Time TBD
+  year: 2026
+  # TODO(2026): confirm venue; AGU Fall Meeting 2026 is in San Francisco, CA
+  location: San Francisco, CA — venue TBD
+# Add a button link right under the top (e.g. JupyterBook, url can be local file or https://)
+  links:
+  # - url: intro.html
+  #   title: Event Jupyter Book
+  #   new_window: false
+  # TODO(2026): add the banner graphic file at this path (not yet in the repo)
+  image: assets/images/Spark 2026-banner.png
+# The opening session of the event with UTC offset.
+# TODO(2026): placeholder date — confirm and update (Pacific Time for San Francisco).
+event_countdown: "2026-12-16T18:30:00-08:00"
+about:
+  description: Ready to <b><i>spark</i></b> conversation? Spark@AGU talks are a dynamic five minutes of exactly 20 auto-advancing slides! This isn't your typical research presentation. Speakers craft engaging visuals and accessible language on any topic they choose. It's quick, bold, and creative – leave the jargon behind!
+  learn_more: https://www.esipfed.org/spark-agu/
+applicant_info: false
+# Redirect the site to a different domain.
+#redirect:
+#    url: https://go.somehwere.else
+team:
+  !include team/team.yaml
+speakers:
+  !include speakers/speakers.yaml
+schedule:
+  !include schedule.yaml
+# TODO(2026): confirm 2026 sponsors, then restore this block (set to a mapping again).
+# Past sponsor for reference:
+#   description: ''
+#   organizations:
+#   - name: NASA’s Earth Science Division
+#     website: https://science.nasa.gov/earth-science/
+#     logo_url: assets/images/NASA-Logo-Large.png
+sponsors: false
+footer:
+  social:
+  - icon: github
+    icon_pack: fab
+    link: https://github.com/ESIPFed
+_copy_without_render:
+- assets
+_extensions:
+- jinja_markdown.MarkdownExtension

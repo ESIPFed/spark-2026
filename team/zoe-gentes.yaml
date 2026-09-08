@@ -1,0 +1,21 @@
+- title: Zoe Gentes
+  avatar: https://avatars.githubusercontent.com/zoegentes
+  role: Communications Director
+  organizations:
+    - name: Earth Science Information Partners (ESIP)
+      url: https://www.esipfed.org/
+  bio: 
+    Zoe is the Communications Director at ESIP and is a Spark Organizer. Her background includes geochemistry and oceanography, science writing and communication, science policy and public affairs, and content management.
+  expertise:
+    - Geochemistry
+    - Science communications
+    - Science policy
+    - Digital marketing
+  social:
+    - icon: github
+      link: https://github.com/zoegentes
+    - icon: linkedin
+      link: https://www.linkedin.com/in/zoegentes/
+  user_groups:
+    - Spark Organizer
+    

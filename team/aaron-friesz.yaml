@@ -1,0 +1,25 @@
+- title: Aaron Friesz
+  avatar: https://avatars.githubusercontent.com/amfriesz
+  role: Technical Community Director
+  organizations:
+    - name: Earth Science Information Partners (ESIP)
+      url: https://www.esipfed.org/
+  bio: 
+    Aaron is the Technical Community Director at ESIP and a Spark Organizer. His background includes ecology, GIS, remote sensing, data archiving and distribution, and community engagement.
+  expertise:
+    - GIS
+    - Remote Sensing
+    - Python
+    - Jupyter
+    - Open Science
+    - GitHub
+  social:
+    - icon: github
+      link: https://github.com/amfriesz
+    - icon: bluesky
+      link: https://bsky.app/profile/afriesz.bsky.social
+    - icon: linkedin
+      link: https://www.linkedin.com/in/aaron-friesz-32a3751a6
+  user_groups:
+    - Spark Organizer
+    

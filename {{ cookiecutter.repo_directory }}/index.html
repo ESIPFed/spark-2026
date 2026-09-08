@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{{ cookiecutter.name }}</title>
+
+    {%- if 'redirect' in cookiecutter %}
+    <meta http-equiv="refresh" content="0; {{cookiecutter.redirect.url}}">
+    <script>
+         window.location.replace("{{cookiecutter.redirect.url}}");
+    </script>
+    {% endif %}
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ cookiecutter.banner.description }}">
+    <meta name="author" content="{{ cookiecutter.name }}">
+    <link rel="shortcut icon" href="{{ cookiecutter.favicon }}">
+    <!-- 
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/ESIPFed/spark-2026/{{ cookiecutter.repo_directory }}/assets/images/favicon.png">
+    -->
+    
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:600,700,800|Roboto:300,400,700&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome JS-->
+    <script defer src="assets/fontawesome/js/all.min.js"></script>
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        .hero-carousel .carousel-item-1 {
+            background: url("{{cookiecutter.banner['image']}}") no-repeat center center;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+<header id="header" class="header fixed-top">
+    <div class="branding">
+        <div class="container-fluid">
+            <nav class="main-nav navbar navbar-expand-lg">
+                <div class="site-logo">
+                    <a class="scrollto" href="#hero-block">
+                        <span class="logo-icon-text">
+                            Earth Science Information Partners
+                        </span>
+                    </a>
+                </div>
+
+                {%- if cookiecutter.apply %}
+                <div class="navbar-btn order-lg-2">
+                    <a class="btn btn-secondary"
+                       {%- if 'url' in cookiecutter.apply %}
+                       href="{{ cookiecutter.apply.url }}"
+                       target="_blank"
+                       {%- endif %}
+                    >
+                    {{ cookiecutter.apply.title }}
+                    </a>
+                </div>
+                {%- endif %}
+
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#navigation"
+                        aria-controls="navigation" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div id="navigation"
+                     class="navbar-collapse collapse  justify-content-lg-end me-lg-3">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link scrollto" href="#about-section">
+                                About
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link scrollto" href="#speakers-section">
+                                Speakers
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link scrollto" href="#team">
+                                Team
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link scrollto" href="#schedule">
+                                Schedule
+                            </a>
+                        </li>
+                        {%- if cookiecutter.sponsors %}
+                        <li class="nav-item">
+                            <a class="nav-link scrollto" href="#sponsors-section">
+                                Sponsors
+                            </a>
+                        </li>
+                        {%- endif %}
+                    </ul>
+                </div>
+            </nav>
+            <!--//main-nav-->
+        </div>
+    </div>
+    <!--//branding-->
+</header>
+
+<div id="hero-block" class="hero-block">
+    <div id="hero-carousel" class="hero-carousel carousel slide carousel-fade"
+         data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item-1 carousel-item active">
+            </div>
+        </div>
+    </div>
+    <div class="hero-block-mask"></div>
+    <div class="container">
+        <div class="hero-text-block">
+            <h1 class="hero-heading mb-2">
+                {{ cookiecutter.name }} {{ cookiecutter.banner.year }}
+            </h1>
+            <div class="hero-meta mb-2">
+                <i class="far fa-calendar-alt me-2"></i>
+                {{ cookiecutter.banner.event_date }} | {{ cookiecutter.banner.event_time }}
+            </div>
+            <div class="hero-meta mb-3">
+                <i class="fas fa-map-marker-alt me-2"></i>
+                {{ cookiecutter.banner.location }}
+            </div>
+            <div class="hero-intro mb-4">{{ cookiecutter.banner.description
+                }}
+            </div>
+            {%- if cookiecutter.banner.links %}
+            <div class="hero-cta">
+                {%- for link in cookiecutter.banner.links %}
+                <a class="btn btn-primary btn-lg m-2"
+                   href="{{ link.url }}"
+                   {{ 'target="_blank"' if link.new_window == 'True' else '' }}
+                >
+                {{ link.title }}
+                </a>
+                {%- endfor %}
+            </div>
+            {%- endif %}
+        </div>
+        <!--//hero-text-block-->
+    </div>
+    <!--//container-->
+
+</div>
+<!--//hero-block-->
+
+<section id="about-section" class="about-section section theme-bg-light">
+    <div class="container">
+        <h3 class="section-heading text-center mb-3">
+            About {{ cookiecutter.name }}
+        </h3>
+        <div class="section-intro single-col-max mx-auto mb-3 text-center">
+            {{ cookiecutter.about.description }}
+        </div>
+        <div class="about-cta text-center mb-4">
+            <a class="btn btn-secondary btn-lg"
+               href="{{ cookiecutter.about.learn_more }}"
+               target="_blank">
+                Learn about "Spark"
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+
+        <div id="countdown-intro" class="event-countdown text-center mb-4">
+            <h4 class="countdown-intro mb-2 text-center">
+                {{ cookiecutter.banner.year }} Event Starts In:
+            </h4>
+            <div id="countdown-box"
+                 class="countdown-box"
+                 data-start-date="{{ cookiecutter.event_countdown }}">
+                {% for unit in ['days', 'hours', 'minutes', 'seconds'] %}
+                <span class="{{ unit }}">
+                    <span class="number"></span>
+                    <span class="unit">{{ unit.capitalize() }}</span>
+                </span>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    {%- if cookiecutter.applicant_info %}
+    <div class="media-block theme-bg-primary py-5">
+        <div class="container">
+            <h4 class="text-white text-center mb-3">
+                Information for Applicants
+            </h4>
+            <div
+                class="section-intro text-center single-col-max mx-auto text-white mb-3">
+                {{cookiecutter.applicant_info}}
+            </div>
+        </div>
+    </div>
+    {%- endif %}
+</section>
+<!--//about-section-->
+
+{%- if cookiecutter.speakers %}
+<section id="speakers-section" class="speakers-section">
+    <div class="container">
+        <h3 class="section-heading text-center mb-3">Meet the speakers</h3>
+        <div class="section-intro text-center single-col-max mx-auto mb-5">
+            {{ cookiecutter.speakers['description'] }}
+        </div>
+        {%- if cookiecutter.speakers['people'] %}
+        <div class="row">
+            {%- for person in cookiecutter.speakers['people'] %}
+            {%- set modal_name = person['title']|lower|replace(' ', '--') %}
+            {%- set modal_key = '{}-modal'.format(modal_name) %}
+            <div class="col-6 col-lg-3 mb-4">
+                <div class="card rounded-0">
+                    <a href="#{{ modal_key }}" data-bs-toggle="modal"
+                       data-bs-target="#{{ modal_key }}"><img
+                        src="{{ person['avatar'] }}"
+                        class="card-img-top rounded-0" alt=""></a>
+                    <div class="card-body">
+                        <h5 class="card-title mb-2">{{ person['title'] }}</h5>
+                        <div class="card-text mb-3">
+                            <div class="meta">{{ person['organizations']|map(attribute='name')|join(' | ') }}</div>
+                            <div class="meta"><strong>{{ person['talk'] }}</strong></div>
+                            <div class="meta">
+                                {%- for group in person['user_groups'] %}
+                                <img
+                                    src="https://img.shields.io/badge/Spark-{{ group }}-blue.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAk0AAAH5CAMAAACrl/qUAAAAAXNSR0IB2cksfwAAAAlwSFlzAAAuIwAALiMBeKU/dgAAAwBQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Bz0LCAAAAQB0Uk5TAAYNFBogJy00OkFHTlRaYWdudHhwaGBYUEhAODAoGBAHASVPZHmOo7fM4fb/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"
+                                    alt="{{ group }} badge"/>
+                                {%- endfor %}
+                            </div>
+                        </div>
+                        <!--//card-text-->
+                    </div>
+                    <!--//card-->
+                    {%- if 'social' in person %}
+                    <div class="card-footer text-muted">
+                        <ul class="social-list list-inline mb-0">
+                            {%- for social in person['social'] %}
+                            <li class="list-inline-item">
+                                <a href="{{social['link']}}">
+                                    <i class="fab fa-{{social['icon']}}"></i>
+                                </a>
+                            </li>
+                            {%- endfor %}
+                        </ul>
+                        <!--//social-list-->
+                    </div>
+                    {%- endif %}
+                </div>
+            </div>
+            <!--//col-->
+            {%- endfor %}
+        </div>
+        <!--//row-->
+        {%- endif %}
+    </div>
+    <!--//container-->
+</section>
+<!--//team-->
+{%- endif %}
+
+<div class="container">
+    <hr>
+</div>
+
+{%- if cookiecutter.schedule %}
+<section id="schedule" class="schedule-section section">
+    <div class="container">
+        <h3 class="section-heading text-center mb-1">Schedule</h3>
+        <h4 class="text-center mb-5">
+            All times listed below are {{ cookiecutter.schedule.timezone }}.
+        </h4>
+        {%- if cookiecutter.schedule["tabs"] %}
+        <!-- Nav tabs -->
+        <ul class="schedule-nav nav nav-pills nav-fill" id="myTab"
+            role="tablist">
+            {% for tab in cookiecutter.schedule["tabs"] %}
+            {%- set link_class = '' %}
+            {%- set link_state = 'false' %}
+            {%- if loop.index == 1 %}
+            {%- set link_class = 'active' %}
+            {%- set link_state = 'true' %}
+            {%- endif %}
+            <li class="nav-item me-2">
+                <a class="nav-link {{ link_class }}"
+                   id="schedule-tab-{{ loop.index }}"
+                   data-bs-toggle="tab"
+                   data-bs-target="#schedule-{{ loop.index }}-content"
+                   href="#tab-{{ loop.index }}-content"
+                   role="tab"
+                   aria-controls="schedule-tab-{{ loop.index }}-content"
+                   aria-selected="{{ link_state }}"
+                   data-schedule-day="{{ tab['date'] }}"
+                >
+                    <span class="heading">{{ tab['title'] }}</span>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="schedule-tab-content tab-content">
+            {% for tab in cookiecutter.schedule["tabs"] %}
+            {%- if 'contents' in tab %}
+            {%- if loop.index == 1 %}
+            {%- set tab_class = 'active' %}
+            {%- if tab['contents']|length == 0 %}
+            {%- set tab_class = 'active no-timeline' %}
+            {%- endif %}
+            {%- elif tab['contents']|length == 0 %}
+            {%- set tab_class = 'no-timeline' %}
+            {%- else %}
+            {%- set tab_class = '' %}
+            {%- endif %}
+            {%- else %}
+            {%- set tab_class = 'no-timeline' %}
+            {%- endif %}
+            <div class="tab-pane {{ tab_class }}"
+                 id="schedule-{{ loop.index }}-content"
+                 role="tabpanel"
+                 aria-labelledby="schedule-tab-{{ loop.index }}">
+                {%- if 'no-timeline' in tab_class %}
+                <h4 class="text-center py-5 text-muted">
+                    {{ tab['title'] }} Agenda Coming Soon...
+                </h4>
+                {%- else %}
+                {%- for content in tab['contents'] %}
+                <div class="item item-talk">
+                    <div class="meta">
+                        <h4 class="time mb-3">
+                            {{ content['time'] }}
+                        </h4>
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title mb-3">
+                            {{ content['title'] }}
+                        </h3>
+
+                        {% if 'location' in content %}
+                        <div class="location mb-3"><i
+                            class="fas fa-map-marker-alt me-2"></i>
+                            {{ content['location'] }}
+                        </div>
+                        {% endif %}
+
+                        <div class="desc">
+                            {% if 'description' in content and content['description'] is not none %}
+                            {%- markdown -%}
+                            {{ content['description']|safe }}
+                            {%- endmarkdown -%}
+                            {%- endif %}
+                        </div>
+                        {%- if 'leads' in content and content['leads']|length > 0 %}
+                        <div class="profile">
+                            <h6 class="mb-1 mt-2"> Spark Presenter(s) </h6>
+                            {%- for lead in content['leads'] %}
+                            {%- set person = cookiecutter.team['people']|selectattr('title', '==', lead)|list %}
+                            {%- if person|length > 0 %}
+                            {%- set modal_name = person[0]['title']|lower|replace(' ', '--') %}
+                            {%- set modal_key = '{}-modal'.format(modal_name) %}
+                            <div class="name">
+                                <a class="theme-link"
+                                   href="#{{modal_key}}"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#{{modal_key}}">
+                                    {{ lead }}
+                                </a>
+                            </div>
+                            {%- else %}
+                            <div class="name">{{ lead }}</div>
+                            {%- endif %}
+                            {%- endfor %}
+                        </div>
+                        {%- endif %}
+                        {%- if 'resources' in content and content['resources'] is not none %}
+                        <div>
+                            <h6 class="mb-1 mt-2"> Resource(s)</h6>
+                            <ul>
+                                {%- for resource in content['resources'] %}
+                                <li>
+                                    <a href="{{resource['url']}}"
+                                       target="_blank">
+                                        {{resource['title']}}
+                                    </a>
+                                </li>
+                                {%- endfor %}
+                            </ul>
+                        </div>
+                        {%- endif -%}
+                    </div>
+                </div>
+                {% endfor %}
+                <!--//item-->
+                {%- endif %}
+            </div>
+            <!--//tab-{{loop.index}}-content-->
+            {% endfor %}
+        </div>
+        <!--//schedule-tab-content-->
+        {%- endif %}
+    </div>
+    <!--//container-->
+</section>
+<!--//schedule-section-->
+{% endif %}
+
+<div class="container">
+    <hr>
+</div>
+
+{%- if cookiecutter.team %}
+<section id="team" class="team section">
+    <div class="container">
+        <h3 class="section-heading text-center mb-3">Meet the team</h3>
+        <div class="section-intro text-center single-col-max mx-auto mb-5">
+            {{ cookiecutter.team['description'] }}
+        </div>
+        {%- if cookiecutter.team['people'] %}
+        <div class="row">
+            {%- for person in cookiecutter.team['people'] %}
+            {%- set modal_name = person['title']|lower|replace(' ', '--') %}
+            {%- set modal_key = '{}-modal'.format(modal_name) %}
+            <div class="col-6 col-lg-3 mb-4">
+                <div class="card rounded-0">
+                    <a href="#{{ modal_key }}" data-bs-toggle="modal"
+                       data-bs-target="#{{ modal_key }}"><img
+                        src="{{ person['avatar'] }}"
+                        class="card-img-top rounded-0" alt=""></a>
+                    <div class="card-body">
+                        <h5 class="card-title mb-2">{{ person['title'] }}</h5>
+                        <div class="card-text mb-3">
+                            <div class="meta">{{ person['role'] }}</div>
+                            <div class="meta">
+                                {%- for group in person['user_groups'] %}
+                                <img
+                                    src="https://img.shields.io/badge/Spark-{{ group }}-blue.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAk0AAAH5CAMAAACrl/qUAAAAAXNSR0IB2cksfwAAAAlwSFlzAAAuIwAALiMBeKU/dgAAAwBQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Bz0LCAAAAQB0Uk5TAAYNFBogJy00OkFHTlRaYWdudHhwaGBYUEhAODAoGBAHASVPZHmOo7fM4fb/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"
+                                    alt="{{ group }} badge"/>
+                                {%- endfor %}
+                            </div>
+                        </div>
+                        <!--//card-text-->
+                        <a href="#{{ modal_key }}"
+                           data-bs-toggle="modal"
+                           data-bs-target="#{{ modal_key }}">
+                            Read more &rarr;
+                        </a>
+                    </div>
+                    <!--//card-->
+                    {%- if 'social' in person %}
+                    <div class="card-footer text-muted">
+                        <ul class="social-list list-inline mb-0">
+                            {%- for social in person['social'] %}
+                            <li class="list-inline-item">
+                                <a href="{{social['link']}}">
+                                    <i class="fab fa-{{social['icon']}}"></i>
+                                </a>
+                            </li>
+                            {%- endfor %}
+                        </ul>
+                        <!--//social-list-->
+                    </div>
+                    {%- endif %}
+                </div>
+                <!--//card-->
+                <!-- Modal Speaker -->
+                <div class="modal modal-speaker modal-speaker-1"
+                     id="{{ modal_key }}" tabindex="-1" role="dialog"
+                     aria-labelledby="{{ modal_name }}-ModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-hidden="true">&times;
+                                </button>
+                                <h4 id="{{modal_name}}-ModalLabel"
+                                    class="modal-title sr-only">
+                                    {{person['title']}}
+                                </h4>
+                            </div>
+                            <div class="modal-body p-0">
+                                <div class="theme-bg-light p-5">
+                                    <div class="row">
+                                        <div
+                                            class="col-12 col-md-auto text-center">
+                                            <img
+                                                class="profile-image mb-3 mb-md-0 me-md-4 rounded-circle mx-auto"
+                                                src="{{ person['avatar'] }}"
+                                                alt=""/>
+                                        </div>
+
+                                        <div
+                                            class="col text-center text-md-start mx-auto">
+                                            <h2 class="name mb-2">
+                                                {{person['title']}}
+                                            </h2>
+                                            <div class="meta">
+                                                {{ person['role'] }}
+                                            </div>
+                                            <div class="meta mb-2">
+                                                {{person['organizations']|map(attribute='name')|join(' &amp; ')}}
+                                            </div>
+                                            {%- if 'social' in person %}
+                                            <ul class="social-list list-inline mb-0">
+                                                {%- for social in person['social'] %}
+                                                <li class="list-inline-item">
+                                                    <a href="{{social['link']}}">
+                                                        <i class="fab fa-{{social['icon']}}"></i>
+                                                    </a>
+                                                </li>
+                                                {%- endfor %}
+                                            </ul>
+                                            {%- endif %}
+                                            <!--//social-list-->
+                                        </div>
+                                        <!--//col-->
+                                    </div>
+                                    <!--//row-->
+                                </div>
+                                <div class="desc p-4 p-lg-5">
+                                    <div class="mb-2">
+                                        {%- for group in person['user_groups'] %}
+                                        <img
+                                            src="https://img.shields.io/badge/Spark-{{ group }}-purple?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAOCAQAAABedl5ZAAAACXBIWXMAAAHKAAABygHMtnUxAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAMNJREFUGBltwcEqwwEcAOAfc1F2sNsOTqSlNUopSv5jW1YzHHYY/6YtLa1Jy4mbl3Bz8QIeyKM4fMaUxr4vZnEpjWnmLMSYCysxTcddhF25+EvJia5hhCudULAePyRalvUteXIfBgYxJufRuaKuprKsbDjVUrUj40FNQ11PTzEmrCmrevPhRcVQai8m1PRVvOPZgX2JttWYsGhD3atbHWcyUqX4oqDtJkJiJHUYv+R1JbaNHJmP/+Q1HLu2GbNoSm3Ft0+Y1YMdPSTSwQAAAABJRU5ErkJggg==&style=plastic"
+                                            alt="{{ group }} badge"
+                                        />
+                                        {%- endfor %}
+                                    </div>
+                                    {%- if 'bio' in person %}
+                                    {{ person['bio'] }}
+                                    {%- endif %}
+                                    {%- if 'expertise' in person and person['expertise']|length > 0 %}
+                                    <div class="mt-1">
+                                        <h5>Interests / Expertise</h5>
+                                        <ul>
+                                            {%- for ex in person['expertise'] %}
+                                                <li>{{ex}}</li>
+                                            {%- endfor %}
+                                        </ul>
+                                    </div>
+                                    {%- endif %}
+                                </div>
+                            </div>
+                            <!--//modal-body-->
+                        </div>
+                        <!--//modal-content-->
+                    </div>
+                    <!--//modal-dialog-->
+                </div>
+                <!--//modal-->
+            </div>
+            <!--//col-->
+            {%- endfor %}
+        </div>
+        <!--//row-->
+        {%- endif %}
+    </div>
+    <!--//container-->
+</section>
+<!--//team-->
+{%- endif %}
+
+{%- if cookiecutter.sponsors %}
+<section id="sponsors-section" class="sponsors-section section theme-bg-light">
+    <div class="container">
+        <h3 class="section-heading text-center mb-3">Our Sponsors</h3>
+        <div class="section-intro text-center single-col-max mx-auto mb-5">
+            {{ cookiecutter.sponsors['description'] }}
+        </div>
+        {%- if cookiecutter.sponsors['organizations']|length > 0 %}
+        <div class="row logos justify-content-center">
+            {%- for org in cookiecutter.sponsors['organizations'] %}
+            <div class="logo-item col-6 col-md-4 col-lg-2">
+                {%- if org['website'] %}
+                <a href="{{ org['website'] }}" target="_blank"><img
+                    src="{{ org['logo_url'] }}"
+                    alt="{{ org['name'] }}"></a>
+                {%- else %}
+                <img src="{{ org['logo_url'] }}" alt="{{ org['name'] }}">
+                {%- endif %}
+            </div>
+            {%- endfor %}
+        </div>
+        {%- endif %}
+        <!--//row-->
+    </div>
+    <!--//container-->
+</section>
+<!--//sponsors-section-->
+{%- endif %}
+
+<footer class="footer py-5 theme-bg-primary">
+    <div class="container text-center">
+        {%- if cookiecutter.footer['social']|length > 0 %}
+        <ul class="social-list list-inline mb-4">
+            {%- for soc in cookiecutter.footer['social'] %}
+            <li class="list-inline-item me-3">
+                <a href="{{ soc['link'] }}">
+                    <i class="{{ soc['icon_pack'] }} fa-{{ soc['icon'] }}"></i>
+                </a>
+            </li>
+            {%- endfor %}
+        </ul>
+        <!--//social-list-->
+        {%- endif %}
+
+        <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+        <small class="copyright">©
+            <script type="text/javascript">
+                document.write(new Date().getFullYear().toString());
+            </script>
+            {{ cookiecutter.name }}
+        </small>
+        <br>
+        <small class="copyright">
+            Designed with <i class="fas fa-heart" style="color: #EC645E;"></i>
+            by
+            <a href="http://themes.3rdwavemedia.com" target="_blank">
+                Xiaoying Riley
+            </a> for developers
+        </small>
+        <br>
+        <small class="copyright">
+            This template was forked from the University of Washington eScience Institute
+            <a href="https://github.com/uwhackweek/splashpage-template" target="_blank">
+                Hackweek program
+            </a>
+        </small>
+    </div>
+</footer>
+
+<!-- Javascript -->
+<script defer src="assets/plugins/popper.min.js"></script>
+<script defer src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script defer src="assets/plugins/smoothscroll.min.js"></script>
+<script defer src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script>
+<script defer src="assets/js/main.js"></script>
+
+</body>
+
+</html>

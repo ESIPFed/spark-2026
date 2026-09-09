@@ -1,14 +1,14 @@
-# Spark@AGU 2026 schedule — SKELETON ONLY.
-# TODO(2026): set the real date, times, talk titles, descriptions, and leads
-# once the AGU Fall Meeting 2026 (San Francisco) program is confirmed.
+# Spark@AGU 2026 schedule.
+# Date and venue are set; talk titles, leads, and the per-item run-of-show
+# times are still TBD until the speaker lineup is confirmed.
 timezone: UTC -8 (Pacific Standard Time)
 tabs:
-- title: Spark@AGU 2026
-  date: Date TBD
+- title: Wednesday, December 9, 2026
+  date: Wednesday 9 December
   contents:
   - title: Doors Open & Socialize
     description: Get comfortable and ready to have your mind blown!
-    time: TBD
+    time: 18:00 - 18:20
     leads:
     - Zoe Gentes
   - title: Welcome & Opening Remarks
@@ -27,7 +27,7 @@ tabs:
     time: TBD
   - title: Closing Remarks & Social
     description: Closing remarks and networking.
-    time: TBD
+    time: 20:00 - 20:30
     leads:
     - Zoe Gentes
     - Aaron Friesz

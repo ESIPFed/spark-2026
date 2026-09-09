@@ -2,6 +2,20 @@ repo_directory: html
 name: Spark@AGU
 favicon: assets/images/esip-favicon.png
 apply: false
+
+# Site phase: controls whether the page recruits speakers or presents the lineup.
+#   cfp    - call for speakers open; agenda hidden; last year's lineup shown
+#   lineup - speakers and agenda are set; normal event presentation
+# To flip the site back to lineup mode in November, see MAINTAINING.md.
+event_phase: cfp
+
+# Call-for-speakers settings (only used when event_phase: cfp).
+# If deadline / deadline_iso are unset or "TODO", the "Applications close…"
+# sentence and the countdown are hidden rather than shown broken.
+cfp:
+  apply_url: "https://docs.google.com/forms/d/e/1FAIpQLScTkvrNJRUdetVxjyQptAaNVlK4DSugfBWX2KuSCKXLvfcIlQ/viewform"
+  deadline: "at midnight ET on October 19, 2026"
+  deadline_iso: "2026-10-20T00:00:00-04:00"
 banner:
   description: ""
   start_date: XX Month
@@ -29,6 +43,10 @@ team:
   !include team/team.yaml
 speakers:
   !include speakers/speakers.yaml
+# Last year's lineup, shown in the Speakers section while event_phase: cfp.
+# Same schema as speakers/speakers.yaml so the normal grid renders it.
+past_speakers:
+  !include past-speakers.yaml
 schedule:
   !include schedule.yaml
 # TODO(2026): confirm 2026 sponsors, then restore this block (set to a mapping again).

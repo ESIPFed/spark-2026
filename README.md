@@ -40,11 +40,18 @@ If you're an organizer or speaker, add yourself to the website:
    `{{ cookiecutter.repo_directory }}/assets/images/`
 3. Commit your changes and create a pull request
 
+### Call-for-speakers vs. lineup mode
+
+The site has two phases, controlled by `event_phase` in `cookiecutter.yaml`
+(`cfp` while soliciting speakers, `lineup` for the normal event page). See
+[MAINTAINING.md](MAINTAINING.md) for what each phase shows and the five-step
+flip back to `lineup`.
+
 ### Updating Event Information
 
 Key files to modify for event content:
 
-- `cookiecutter.yaml` - Main event details (dates, location, description, banner image)
+- `cookiecutter.yaml` - Main event details (dates, location, description, banner image, `event_phase`)
 - `schedule.yaml` - Event schedule and speaker lineup
 - `team/*.yaml` - Individual organizer profiles
 - `speakers/*.yaml` - Individual speaker profiles

@@ -80,6 +80,13 @@
                                 About
                             </a>
                         </li>
+                        {%- if cookiecutter.event_phase == "cfp" %}
+                        <li class="nav-item">
+                            <a class="nav-link scrollto" href="#call-for-speakers">
+                                Apply
+                            </a>
+                        </li>
+                        {%- endif %}
                         <li class="nav-item">
                             <a class="nav-link scrollto" href="#speakers-section">
                                 Speakers
@@ -125,6 +132,16 @@
             <h1 class="hero-heading mb-2">
                 {{ cookiecutter.name }} {{ cookiecutter.banner.year }}
             </h1>
+            {%- if cookiecutter.event_phase == "cfp" %}
+            <div class="hero-meta mb-3">
+                <i class="far fa-calendar-alt me-2"></i>
+                {%- if cookiecutter.banner.event_date %}
+                {{ cookiecutter.banner.event_date }}, {{ cookiecutter.banner.year }} · San Francisco, CA · AGU26
+                {%- else %}
+                December {{ cookiecutter.banner.year }} · San Francisco, CA · AGU26
+                {%- endif %}
+            </div>
+            {%- else %}
             <div class="hero-meta mb-2">
                 <i class="far fa-calendar-alt me-2"></i>
                 {{ cookiecutter.banner.event_date }} | {{ cookiecutter.banner.event_time }}
@@ -133,10 +150,17 @@
                 <i class="fas fa-map-marker-alt me-2"></i>
                 {{ cookiecutter.banner.location }}
             </div>
+            {%- endif %}
             <div class="hero-intro mb-4">{{ cookiecutter.banner.description
                 }}
             </div>
-            {%- if cookiecutter.banner.links %}
+            {%- if cookiecutter.event_phase == "cfp" %}
+            <div class="hero-cta">
+                <a class="btn btn-primary btn-lg m-2 scrollto" href="#call-for-speakers">
+                    We're looking for speakers &rarr;
+                </a>
+            </div>
+            {%- elif cookiecutter.banner.links %}
             <div class="hero-cta">
                 {%- for link in cookiecutter.banner.links %}
                 <a class="btn btn-primary btn-lg m-2"
@@ -175,13 +199,21 @@
             </a>
         </div>
 
+        {%- if cookiecutter.event_phase == "cfp" %}
+        {%- set countdown_target = cookiecutter.cfp.deadline_iso if 'deadline_iso' in cookiecutter.cfp else '' %}
+        {%- set countdown_label = "Applications close in" %}
+        {%- else %}
+        {%- set countdown_target = cookiecutter.event_countdown %}
+        {%- set countdown_label = cookiecutter.banner.year ~ " Event Starts In:" %}
+        {%- endif %}
+        {%- if countdown_target and countdown_target != "TODO" %}
         <div id="countdown-intro" class="event-countdown text-center mb-4">
             <h4 class="countdown-intro mb-2 text-center">
-                {{ cookiecutter.banner.year }} Event Starts In:
+                {{ countdown_label }}
             </h4>
             <div id="countdown-box"
                  class="countdown-box"
-                 data-start-date="{{ cookiecutter.event_countdown }}">
+                 data-start-date="{{ countdown_target }}">
                 {% for unit in ['days', 'hours', 'minutes', 'seconds'] %}
                 <span class="{{ unit }}">
                     <span class="number"></span>
@@ -190,6 +222,7 @@
                 {% endfor %}
             </div>
         </div>
+        {%- endif %}
     </div>
 
     {%- if cookiecutter.applicant_info %}
@@ -208,24 +241,116 @@
 </section>
 <!--//about-section-->
 
-{%- if cookiecutter.speakers %}
+{%- if cookiecutter.event_phase == "cfp" %}
+<section id="call-for-speakers" class="call-for-speakers section">
+    <div class="container">
+        <h3 class="section-heading text-center mb-3">
+            We're looking for you. Yes, you.
+        </h3>
+        <div class="section-intro single-col-max mx-auto mb-4">
+            <p>
+                Do you have a story that doesn't fit in a poster session? A weird
+                finding, a hard-won lesson, an unreasonable opinion about metadata,
+                an obsession with tide gauges you can't explain at parties?
+            </p>
+            <p>
+                Spark isn't a conference talk. It's five minutes and 20 slides that
+                advance whether you're ready or not. We want the communicators who
+                make strangers lean in &mdash; the ones who can make a room laugh,
+                gasp, or rethink something in less time than it takes to find coffee.
+            </p>
+        </div>
+
+        <div class="row single-col-max mx-auto mb-4">
+            <div class="col-md-6 mb-3 mb-md-0">
+                <div class="theme-bg-light h-100 p-4">
+                    <strong>What plays well here:</strong> big ideas in small words.
+                    One great image instead of six bullet points. Something you'd
+                    tell a friend, not a review panel. A little nerve. A little
+                    chaos. Be human.
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="theme-bg-light h-100 p-4">
+                    <strong>What you get:</strong> coaching on your story and your
+                    slides, virtual practice runs with the other speakers, an
+                    in-person tech rehearsal so nothing catches fire, your talk
+                    recorded for the ESIP channel, and a room full of people who
+                    chose to spend a Wednesday night with you.
+                </div>
+            </div>
+        </div>
+
+        <div class="section-intro single-col-max mx-auto mb-4">
+            <p>
+                No dataset required. No results necessary. No jargon permitted. If
+                you've ever watched a talk and thought <em>someone should really
+                explain this differently</em> &mdash; congratulations, you're someone.
+            </p>
+            <p>
+                {%- if 'deadline' in cookiecutter.cfp and cookiecutter.cfp.deadline and cookiecutter.cfp.deadline != "TODO" %}
+                Applications close <strong>{{ cookiecutter.cfp.deadline }}</strong>.
+                We pick 10&ndash;12 speakers and coach every one of them.
+                {%- else %}
+                We pick 10&ndash;12 speakers and coach every one of them.
+                {%- endif %}
+            </p>
+        </div>
+
+        <div class="text-center">
+            <a class="btn btn-primary btn-lg px-5 py-3"
+               href="{{ cookiecutter.cfp.apply_url }}"
+               target="_blank" rel="noopener">
+                Apply to speak &rarr;
+            </a>
+        </div>
+    </div>
+</section>
+<!--//call-for-speakers-->
+{%- endif %}
+
+{%- if cookiecutter.event_phase == "cfp" %}
+{%- set speaker_source = cookiecutter.past_speakers %}
+{%- set speaker_heading = "Last year's Sparks" %}
+{%- else %}
+{%- set speaker_source = cookiecutter.speakers %}
+{%- set speaker_heading = "Meet the speakers" %}
+{%- endif %}
+{%- if speaker_source %}
 <section id="speakers-section" class="speakers-section">
     <div class="container">
-        <h3 class="section-heading text-center mb-3">Meet the speakers</h3>
-        <div class="section-intro text-center single-col-max mx-auto mb-5">
-            {{ cookiecutter.speakers['description'] }}
+        <h3 class="section-heading text-center mb-3">{{ speaker_heading }}</h3>
+        <div class="section-intro text-center single-col-max mx-auto {% if cookiecutter.event_phase == 'cfp' and 'playlist_url' in speaker_source %}mb-4{% else %}mb-5{% endif %}">
+            {{ speaker_source['description'] }}
         </div>
-        {%- if cookiecutter.speakers['people'] %}
+        {%- if cookiecutter.event_phase == "cfp" and 'playlist_url' in speaker_source %}
+        <div class="text-center mb-5">
+            <a class="btn btn-secondary btn-lg"
+               href="{{ speaker_source['playlist_url'] }}"
+               target="_blank" rel="noopener">
+                Watch the 2025 talks
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+        {%- endif %}
+        {%- if speaker_source['people'] %}
         <div class="row">
-            {%- for person in cookiecutter.speakers['people'] %}
+            {%- for person in speaker_source['people'] %}
             {%- set modal_name = person['title']|lower|replace(' ', '--') %}
             {%- set modal_key = '{}-modal'.format(modal_name) %}
             <div class="col-6 col-lg-3 mb-4">
-                <div class="card rounded-0">
+                <div class="card rounded-0{% if cookiecutter.event_phase == 'cfp' %} theme-bg-light p-3 h-100{% endif %}">
+                    {%- if 'avatar' in person %}
+                    {%- if cookiecutter.event_phase == "lineup" %}
                     <a href="#{{ modal_key }}" data-bs-toggle="modal"
                        data-bs-target="#{{ modal_key }}"><img
                         src="{{ person['avatar'] }}"
                         class="card-img-top rounded-0" alt=""></a>
+                    {%- else %}
+                    <img src="{{ person['avatar'] }}"
+                         class="card-img-top rounded-0" alt="">
+                    {%- endif %}
+                    {%- endif %}
                     <div class="card-body">
                         <h5 class="card-title mb-2">{{ person['title'] }}</h5>
                         <div class="card-text mb-3">
@@ -273,7 +398,27 @@
     <hr>
 </div>
 
-{%- if cookiecutter.schedule %}
+{%- if cookiecutter.event_phase == "cfp" %}
+<section id="schedule" class="schedule-section section">
+    <div class="container text-center">
+        <h3 class="section-heading text-center mb-3">Agenda</h3>
+        <div class="section-intro single-col-max mx-auto py-5">
+            <p class="mb-4">
+                It's blank on purpose &mdash; we're still choosing the speakers
+                who'll fill it.
+            </p>
+            <p class="mb-0">
+                Want one of these slots?
+                <a href="{{ cookiecutter.cfp.apply_url }}"
+                   target="_blank" rel="noopener">
+                    <strong>Apply to speak &rarr;</strong>
+                </a>
+            </p>
+        </div>
+    </div>
+</section>
+<!--//schedule-section-->
+{%- elif cookiecutter.schedule %}
 <section id="schedule" class="schedule-section section">
     <div class="container">
         <h3 class="section-heading text-center mb-1">Schedule</h3>
@@ -473,6 +618,7 @@
                     {%- endif %}
                 </div>
                 <!--//card-->
+                {%- if cookiecutter.event_phase == "lineup" %}
                 <!-- Modal Speaker -->
                 <div class="modal modal-speaker modal-speaker-1"
                      id="{{ modal_key }}" tabindex="-1" role="dialog"
@@ -560,6 +706,7 @@
                     <!--//modal-dialog-->
                 </div>
                 <!--//modal-->
+                {%- endif %}
             </div>
             <!--//col-->
             {%- endfor %}

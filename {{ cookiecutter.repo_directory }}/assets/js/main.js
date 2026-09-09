@@ -70,8 +70,10 @@ if (window.location.search.length > 1) {
 const spy = new Gumshoe('#navigation a', { offset: yOffset });
 
 // variables for time units
+// countdown-box is absent when the countdown is intentionally hidden
+// (e.g. call-for-speakers phase with no deadline set) — stay null-safe.
 const counterDiv = document.getElementById("countdown-box");
-const endDate = new Date(counterDiv.getAttribute('data-start-date'));
+const endDate = counterDiv ? new Date(counterDiv.getAttribute('data-start-date')) : null;
 
 function timeLeft() {
   // find the amount of "seconds" between now and target
@@ -105,11 +107,13 @@ function updateCounter(counterDiv) {
 }
 
 function startCountDown(counterDiv) {
+  if (!counterDiv) return;
   if (timeLeft() > 0) {
     // update the counter every 1 second
     setInterval(updateCounter, 1000, counterDiv);
   } else {
-    document.getElementById("countdown-intro").remove();
+    const intro = document.getElementById("countdown-intro");
+    if (intro) intro.remove();
   }
 }
 

@@ -6,21 +6,18 @@ banner:
   description: ""
   start_date: XX Month
   end_date: XX Month
-  # TODO(2026): confirm event date/time once AGU Fall Meeting 2026 schedule is set
-  event_date: Date TBD
-  event_time: Time TBD
+  event_date: Wednesday, December 9
+  event_time: 6:00 PM to 8:30 PM
   year: 2026
-  # TODO(2026): confirm venue; AGU Fall Meeting 2026 is in San Francisco, CA
-  location: San Francisco, CA — venue TBD
+  location: East Brother Beer Co. Rec Room · 135 4th St, San Francisco, CA
 # Add a button link right under the top (e.g. JupyterBook, url can be local file or https://)
   links:
   # - url: intro.html
   #   title: Event Jupyter Book
   #   new_window: false
   image: assets/images/Spark 2026 - SF Background.png
-# The opening session of the event with UTC offset.
-# TODO(2026): placeholder date — confirm and update (Pacific Time for San Francisco).
-event_countdown: "2026-12-16T18:30:00-08:00"
+# The opening session of the event with UTC offset (Pacific Standard Time).
+event_countdown: "2026-12-09T18:00:00-08:00"
 about:
   description: Ready to <b><i>spark</i></b> conversation? Spark@AGU talks are a dynamic five minutes of exactly 20 auto-advancing slides! This isn't your typical research presentation. Speakers craft engaging visuals and accessible language on any topic they choose. It's quick, bold, and creative – leave the jargon behind!
   learn_more: https://www.esipfed.org/spark-agu/

@@ -9,14 +9,13 @@ Ready to **spark** conversation? Spark@AGU talks are a dynamic five minutes of e
 Spark@AGU is an innovative presentation format hosted by the [Earth Science Information Partners (ESIP)](https://www.esipfed.org/) in conjunction with the American Geophysical Union (AGU) Fall Meeting. Each speaker has exactly 5 minutes to present their ideas using 20 slides that automatically advance every 15 seconds.
 
 **Event Details:**
-- 📅 **When:** Date TBD (AGU Fall Meeting 2026 week)
-- 📍 **Where:** San Francisco, CA — venue TBD
+- 📅 **When:** Wednesday, December 9, 2026, 6:00–8:30 PM local time
+- 📍 **Where:** East Brother Beer Co. Rec Room, 135 4th St, San Francisco, CA 94103
 - ⏱️ **Format:** 5-minute presentations with 20 auto-advancing slides
 - 🎯 **Goal:** Make science accessible, engaging, and conversation-starting
 
-> **Note:** Event date, time, and venue are placeholders until the AGU Fall Meeting 2026
-> program is confirmed. Update `cookiecutter.yaml` (see the `TODO(2026)` markers) and
-> `schedule.yaml` once details are set.
+> **Note:** The speaker lineup and detailed run-of-show times in `schedule.yaml`
+> are still TBD.
 
 **What Makes Spark Special:**
 - **Fast-paced:** 20 slides × 15 seconds = exactly 5 minutes

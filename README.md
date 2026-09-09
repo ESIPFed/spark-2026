@@ -10,7 +10,7 @@ Spark@AGU is an innovative presentation format hosted by the [Earth Science Info
 
 **Event Details:**
 - 📅 **When:** Wednesday, December 9, 2026, 6:00–8:30 PM local time
-- 📍 **Where:** East Brother Beer Co. Rec Room
+- 📍 **Where:** East Brother Beer Co. Rec Room, 135 4th St, San Francisco, CA 94103
 - ⏱️ **Format:** 5-minute presentations with 20 auto-advancing slides
 - 🎯 **Goal:** Make science accessible, engaging, and conversation-starting
 

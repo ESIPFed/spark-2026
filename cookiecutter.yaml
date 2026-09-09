@@ -17,8 +17,7 @@ banner:
   # - url: intro.html
   #   title: Event Jupyter Book
   #   new_window: false
-  # TODO(2026): add the banner graphic file at this path (not yet in the repo)
-  image: assets/images/Spark 2026-banner.png
+  image: assets/images/Spark 2026 - SF Background.png
 # The opening session of the event with UTC offset.
 # TODO(2026): placeholder date — confirm and update (Pacific Time for San Francisco).
 event_countdown: "2026-12-16T18:30:00-08:00"

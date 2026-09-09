@@ -26,6 +26,37 @@
     border: none;
 }
 
+/* Hero: event details on the left, Spark logo on the right */
+.hero-block .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+    height: 100%;
+}
+
 .hero-text-block {
-    margin: 0 auto;
+    margin: 0;
+}
+
+.hero-logo {
+    flex: 0 0 auto;
+    width: 300px;
+    max-width: 45%;
+    position: relative;
+    z-index: 20;
+    filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.55));
+}
+
+@media (max-width: 900px) {
+    .hero-block .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .hero-logo {
+        order: -1;
+        width: 210px;
+    }
 }

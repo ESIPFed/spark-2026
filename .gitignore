@@ -13,6 +13,9 @@
 cookiecutter.json
 /book/_build/html/assets
 
+# Local build preview screenshots
+/.preview/
+
 ## Temporary files created by build scripts
 /team/team.yaml
 

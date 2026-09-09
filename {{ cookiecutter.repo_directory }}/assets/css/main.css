@@ -41,8 +41,8 @@
 
 .hero-logo {
     flex: 0 0 auto;
-    width: 240px;
-    max-width: 40%;
+    width: 300px;
+    max-width: 45%;
     position: relative;
     z-index: 20;
     filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.55));
@@ -57,6 +57,6 @@
 
     .hero-logo {
         order: -1;
-        width: 170px;
+        width: 210px;
     }
 }

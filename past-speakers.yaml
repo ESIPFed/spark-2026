@@ -1,33 +1,8 @@
-# Spark@AGU 2025 lineup — shown in the Speakers section while event_phase: cfp
-# ("Last year's Sparks"). Same schema as speakers/speakers.yaml. No avatars on
-# purpose: these render as name / affiliation / talk cards without headshots.
+# Shown in the Speakers section while event_phase: cfp ("Last year's Sparks").
+# Same schema as speakers/speakers.yaml. Individual 2025 speaker cards were
+# dropped on review; the section now just points at the 2025 playlist.
+# To list speakers again, add entries under `people:` (title / organizations /
+# talk / user_groups); they render as name / affiliation / talk cards.
 description: "Five minutes each. Here's what that looks like."
 playlist_url: "https://youtube.com/playlist?list=PL8X9E6I5_i8g1WOH7HXMbTFEqudVwG204"
-people:
-  - title: Amy Quarkume
-    organizations:
-      - name: Howard University
-    talk: "I Hate My Code: The Environmental Cost of Digital Bias"
-    user_groups:
-      - Spark Presenter
-
-  - title: Cibele Amaral
-    organizations:
-      - name: CIRES, ESIIL and Earth Lab, University of Colorado Boulder
-    talk: "Driving Transformative Environmental Science in the Open Data & AI Era"
-    user_groups:
-      - Spark Presenter
-
-  - title: Denise Hills
-    organizations:
-      - name: Advanced Resources International, Inc.
-    talk: "Purr-suasive Engagement: The Cat's Playbook to Better Dialogue"
-    user_groups:
-      - Spark Presenter
-
-  - title: Joan Jungbin Lee
-    organizations:
-      - name: trubel&co
-    talk: "Map It to Make It: Let's Redraw Our Neighborhoods' Futures!"
-    user_groups:
-      - Spark Presenter
+people: []

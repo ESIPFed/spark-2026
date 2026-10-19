@@ -14,8 +14,8 @@ event_phase: cfp
 # sentence and the countdown are hidden rather than shown broken.
 cfp:
   apply_url: "https://docs.google.com/forms/d/e/1FAIpQLScTkvrNJRUdetVxjyQptAaNVlK4DSugfBWX2KuSCKXLvfcIlQ/viewform"
-  deadline: "at midnight ET on October 19, 2026"
-  deadline_iso: "2026-10-20T00:00:00-04:00"
+  deadline: "at midnight ET on October 23, 2026"
+  deadline_iso: "2026-10-24T00:00:00-04:00"
 banner:
   description: ""
   start_date: XX Month

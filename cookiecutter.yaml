@@ -14,8 +14,8 @@ event_phase: cfp
 # sentence and the countdown are hidden rather than shown broken.
 cfp:
   apply_url: "https://docs.google.com/forms/d/e/1FAIpQLScTkvrNJRUdetVxjyQptAaNVlK4DSugfBWX2KuSCKXLvfcIlQ/viewform"
-  deadline: "at midnight ET on October 23, 2026"
-  deadline_iso: "2026-10-24T00:00:00-04:00"
+  deadline: "at midnight PT on October 23, 2026"
+  deadline_iso: "2026-10-24T00:00:00-07:00"
 banner:
   description: ""
   start_date: XX Month
@@ -33,7 +33,7 @@ banner:
 # The opening session of the event with UTC offset (Pacific Standard Time).
 event_countdown: "2026-12-09T18:00:00-08:00"
 about:
-  description: Ready to <b><i>spark</i></b> conversation? Spark@AGU talks are a dynamic five minutes of exactly 20 auto-advancing slides! This isn't your typical research presentation. Speakers craft engaging visuals and accessible language on any topic they choose. It's quick, bold, and creative – leave the jargon behind!
+  description: Ready to <b><i>spark</i></b> conversation? Spark@AGU talks are a dynamic five minutes of exactly 20 auto-advancing slides! This isn't your typical research presentation. Speakers create a theatrical or interactive experience focused on sharing ideas and making new connections. In the spirit of the event, we want to see you break the mold and spark new conversations. If you love discussing science, ideas, and anything that broadens our understanding of the Earth, then Spark@AGU is for you!
   learn_more: https://www.esipfed.org/spark-agu/
 applicant_info: false
 # Redirect the site to a different domain.

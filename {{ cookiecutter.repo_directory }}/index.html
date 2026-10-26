@@ -195,12 +195,20 @@
             {{ cookiecutter.about.description }}
         </div>
         <div class="about-cta text-center mb-4">
-            <a class="btn btn-secondary btn-lg"
+            <a class="btn btn-secondary btn-lg m-2"
                href="{{ cookiecutter.about.learn_more }}"
                target="_blank">
                 Learn about "Spark"
                 <i class="fas fa-external-link-alt"></i>
             </a>
+            {%- if cookiecutter.past_speakers and 'playlist_url' in cookiecutter.past_speakers %}
+            <a class="btn btn-secondary btn-lg m-2"
+               href="{{ cookiecutter.past_speakers['playlist_url'] }}"
+               target="_blank" rel="noopener">
+                Watch the 2025 talks
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+            {%- endif %}
         </div>
 
         {%- if cookiecutter.event_phase == "cfp" %}
@@ -316,16 +324,6 @@
         <div class="section-intro text-center single-col-max mx-auto {% if cookiecutter.event_phase == 'cfp' and 'playlist_url' in speaker_source %}mb-4{% else %}mb-5{% endif %}">
             {{ speaker_source['description'] }}
         </div>
-        {%- if cookiecutter.event_phase == "cfp" and 'playlist_url' in speaker_source %}
-        <div class="text-center mb-5">
-            <a class="btn btn-secondary btn-lg"
-               href="{{ speaker_source['playlist_url'] }}"
-               target="_blank" rel="noopener">
-                Watch the 2025 talks
-                <i class="fas fa-external-link-alt"></i>
-            </a>
-        </div>
-        {%- endif %}
         {%- if speaker_source['people'] %}
         <div class="row">
             {%- for person in speaker_source['people'] %}

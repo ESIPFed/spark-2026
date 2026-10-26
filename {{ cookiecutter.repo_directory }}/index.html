@@ -253,6 +253,17 @@
 </section>
 <!--//about-section-->
 
+{%- if cookiecutter.event_phase == "lineup" and not cookiecutter.speakers['people'] %}
+<section id="speakers-section" class="speakers-section">
+    <div class="container">
+        <div class="section-intro text-center single-col-max mx-auto mb-5">
+            <p><strong>Speaker selection is underway!</strong> Submissions are closed, and this year’s response was huge. Hold tight while we put together a lineup worth the hype!</p>
+        </div>
+    </div>
+</section>
+<!--//speakers-section-->
+{%- endif %}
+
 {%- if cookiecutter.event_phase == "cfp" %}
 <section id="call-for-speakers" class="call-for-speakers section">
     <div class="container">
@@ -317,7 +328,7 @@
 {%- set speaker_source = cookiecutter.speakers %}
 {%- set speaker_heading = "Meet the speakers" %}
 {%- endif %}
-{%- if speaker_source %}
+{%- if speaker_source and (cookiecutter.event_phase == "cfp" or speaker_source['people']) %}
 <section id="speakers-section" class="speakers-section">
     <div class="container">
         <h3 class="section-heading text-center mb-3">{{ speaker_heading }}</h3>

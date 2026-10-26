@@ -7,7 +7,7 @@ apply: false
 #   cfp    - call for speakers open; agenda hidden; last year's lineup shown
 #   lineup - speakers and agenda are set; normal event presentation
 # To flip the site back to lineup mode in November, see MAINTAINING.md.
-event_phase: cfp
+event_phase: lineup
 
 # Call-for-speakers settings (only used when event_phase: cfp).
 # If deadline / deadline_iso are unset or "TODO", the "Applications close…"

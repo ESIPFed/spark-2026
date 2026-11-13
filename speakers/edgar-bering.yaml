@@ -1,0 +1,8 @@
+- title: Edgar Bering
+  avatar: assets/images/edgar-bering.png
+  organizations:
+    - name: University of Houston
+      url: https://www.uh.edu/
+  talk: "Feel Free to Move about the Solar System"
+  user_groups:
+    - Spark Presenter

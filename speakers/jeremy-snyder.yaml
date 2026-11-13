@@ -1,0 +1,8 @@
+- title: Jeremy Snyder
+  avatar: assets/images/jeremy-snyder.png
+  organizations:
+    - name: Berkeley Lab
+      url: https://www.lbl.gov/
+  talk: "How to Read Water (and why it rhymes)"
+  user_groups:
+    - Spark Presenter

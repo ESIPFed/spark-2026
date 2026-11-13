@@ -1,0 +1,8 @@
+- title: Jeloska Chavez-Paredez
+  avatar: assets/images/jeloska-chavez.png
+  organizations:
+    - name: OpenAQ
+      url: https://openaq.org/
+  talk: "Breathless in El Alto: Community Air Monitoring at 4,150 Meters"
+  user_groups:
+    - Spark Presenter

@@ -1,0 +1,8 @@
+- title: Jaya Hafner
+  avatar: assets/images/jaya-hafner.png
+  organizations:
+    - name: NASA EarthRISE Developers Academy
+      url: https://science.nasa.gov/earth-science/earthrise-developers-academy/
+  talk: "Fighting Yesterday's Fertilizer: The Long Memory of the Great Lakes Watershed"
+  user_groups:
+    - Spark Presenter

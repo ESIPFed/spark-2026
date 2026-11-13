@@ -1,0 +1,8 @@
+- title: Jack Sheehan
+  avatar: assets/images/jack-sheehan.png
+  organizations:
+    - name: Harvard University
+      url: https://www.harvard.edu/
+  talk: "A Love Story of the Elements in Earth's Core"
+  user_groups:
+    - Spark Presenter

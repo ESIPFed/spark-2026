@@ -1,0 +1,8 @@
+- title: David Blodgett
+  avatar: assets/images/dave-blodgett.png
+  organizations:
+    - name: USGS
+      url: https://usgs.gov
+  talk: "Spatiotemporal Phenomena: object of intensive study but limited standardization"
+  user_groups:
+    - Spark Presenter

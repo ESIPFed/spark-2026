@@ -1,0 +1,20 @@
+- title: Lauren Childs-Gleason
+  avatar: assets/images/lauren-childs-gleason.png
+  role: Process Improvement Lead
+  organizations:
+    - name: NASA Disasters Program
+      url: https://appliedsciences.nasa.gov/what-we-do/disasters/disasters-response-coordination-system
+  bio:
+    Lauren is the Process Improvement Lead for NASA's Disasters Response Coordination System and a Spark Organizer. Her background includes geography, GIS, remote sensing, capacity building, and applications of Earth observations for societal benefit.
+  expertise:
+    - GIS
+    - Remote Sensing
+    - Cartography
+    - Capacity Building
+  social:
+    - icon: linkedin
+      link: https://www.linkedin.com/in/lauren-childsgleason/
+    - icon: github
+      link: https://github.com/LMCG8
+  user_groups:
+    - Spark Organizer

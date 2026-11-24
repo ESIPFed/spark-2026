@@ -1,0 +1,17 @@
+- title: Amanda Clayton
+  avatar: assets/images/amanda-clayton.png
+  role: Science Manager
+  organizations:
+    - name: NASA Langley Research Center
+      url: https://www.nasa.gov/langley
+  bio:
+    Amanda is the Science Manager for the NASA DEVELOP Program at the Langley Research Center and a Spark Organizer. Her background is in ecology, conservation, GIS, remote sensing, and capacity building.
+  expertise:
+    - GIS
+    - Remote Sensing
+    - Capacity Building
+  social:
+    - icon: linkedin
+      link: https://www.linkedin.com/in/amanda-clayton-9b6139127/
+  user_groups:
+    - Spark Organizer

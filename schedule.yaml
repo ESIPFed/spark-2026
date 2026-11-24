@@ -9,11 +9,11 @@ tabs:
   - title: Doors Open & Socialize
     description: Grab complimentary food, buy yourself a drink, then get comfortable and ready to have your mind blown!
     time: 18:00 - 18:30
-    leads:
-    - Zoe Gentes
   - title: Welcome & Opening Remarks
     description: Kick-off for Spark@AGU 2026.
     time: 18:30 - 18:40
+    leads:
+    - Zoe Gentes
   - title: Spark Talks (Session 1)
     description: A run of five-minute Spark talks.
     time: 18:40 - 19:10

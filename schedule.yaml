@@ -42,9 +42,11 @@ tabs:
   - title: Intermission
     description: Stretch your legs and take some more food and drink.
     time: 19:10 - 19:25
-  - title: Spark Talks (Session 2)
-    description: A run of five-minute Spark talks.
-    time: 19:25 - 19:55
+  - title: How to Read Water - and why it rhymes
+    description: This talk is about building the perceptual habit of noticing when water is doing the same thing in a new context, and what it does to your relationship with a place when you can suddenly read it in that way. Water is legible everywhere, to anyone willing to learn the alphabet. 
+    time: 19:25 - 19:30
+    leads:
+    - Jeremy Snyder
   - title: Closing Remarks & Social
     description: Closing remarks and thanks for coming to another Spark@AGU! Feel free to keep eating and networking.
     time: 19:55 - 20:30

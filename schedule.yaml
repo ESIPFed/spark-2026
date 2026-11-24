@@ -15,8 +15,10 @@ tabs:
     leads:
     - Zoe Gentes
   - title: The Memory Keepers of Science
-    description: Behind NASA's decades of space observations is an often-unseen group of scientists, engineers, and data specialists. Based on interviews with early data pioneers, this talk shares how their creative problem-solving kept discoveries from being lost. Even as computing tools advance, this human expertise remains essential to keeping scientific data useful for future generations
+    description: Behind NASA's decades of space observations is an often-unseen group of scientists, engineers, and data specialists. Based on interviews with early data pioneers, this talk shares how their creative problem-solving kept discoveries from being lost. Even as computing tools advance, this human expertise remains essential to keeping scientific data useful for future generations.
     time: 18:40 - 18:45
+    leads:
+    - Kaylin Bugbee
   - title: Intermission
     description: Stretch your legs and take some more food and drink.
     time: 19:10 - 19:25

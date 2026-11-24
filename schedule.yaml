@@ -57,6 +57,11 @@ tabs:
     time: 19:37 - 19:42
     leads:
     - Nick Okafor
+  - title: What are Phenomena?
+    description: Key mapping and location standards from OGC and ISO rely on the word phenomena to describe things that happen or exist in space and time—such as real-world features, changing conditions, and samples. Yet none of these core standards actually defines phenomena. This talk asks a simple question - what phenomena do these standards really mean?
+    time: 19:43 - 19:48
+    leads:
+    - David Blodgett
   - title: Closing Remarks & Social
     description: Closing remarks and thanks for coming to another Spark@AGU! Feel free to keep eating and networking.
     time: 19:55 - 20:30

@@ -47,6 +47,11 @@ tabs:
     time: 19:25 - 19:30
     leads:
     - Jeremy Snyder
+  - title: Breathless in El Alto - Community Air Monitoring at 4150 Meters
+    description: After wildfire smoke closed La Paz classrooms in 2024, I set out to measure air quality in El Alto, Bolivia. When a national strike shut down institutional hosts, neighbors, students, and family stepped in to host sensors. After adjusting sea-level sensors for high altitude, the project shows community science in action.
+    time: 19:25 - 19:30
+    leads:
+    - Jeloska Chavez
   - title: Closing Remarks & Social
     description: Closing remarks and thanks for coming to another Spark@AGU! Feel free to keep eating and networking.
     time: 19:55 - 20:30
